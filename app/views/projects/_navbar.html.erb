@@ -1,0 +1,35 @@
+<%# Initialize project to nil if not given to partial %>
+<% project ||= nil %>
+<nav class="flex gap-2 m-2">
+  <% if current_page?(controller: 'projects') || request.path == '/projects' %>
+    <%= link_to "New Project", new_project_path, class: 'btn' %>
+  <% end %>
+
+  <% edit_page_opts = {
+    controller: 'projects', 
+    action: 'edit',
+    id: project ? project.id : 0
+  } %>
+  <% edit_page = project ? current_page?(edit_page_opts) : false %>
+  <% if current_page?(action: 'new') || edit_page %>
+    <%= link_to 'Back', projects_path, class: 'btn' %>
+  <% end %>
+  
+  <% show_page_opts = {
+    controller: 'projects',
+    action: 'show',
+    id: project ? project.id : 0
+  } %>
+  <% show_page = project ? current_page?(show_page_opts) : false %>
+  <% if show_page %>
+    <div><%= link_to 'Edit project', edit_project_path(@project), class: 'btn' %></div>
+    <div><%= link_to 'Delete project',
+                    project_path(@project),
+                    class: 'btn',
+                    data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></div>
+    <div><%= link_to 'Show all', projects_path, class: 'btn' %></div>
+  <% end %>
+</nav>

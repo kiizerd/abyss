@@ -2,12 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .form-field {
+    @apply py-2 px-4 text-gray-700 rounded mt-1;
+  }
+
+  .form {
+    @apply bg-slate-700 mt-2 py-2 px-4 text-gray-300;
+  }
+
+  .project-task-list {
+    @apply bg-slate-700 m-4 p-2 rounded;
   }
 }
 
-*/
+body {
+  @apply bg-slate-800 text-gray-200;
+}
+
+input[type="submit"], .btn {
+  @apply bg-slate-500 text-gray-100 my-2 px-4 py-1 rounded cursor-pointer;
+}
+
+/* Task List Header */
+.project-task-list > span` > h4 {
+  text-decoration: underline;
+}
+
+.project-task-list > ul {
+  margin: 4px;
+}
