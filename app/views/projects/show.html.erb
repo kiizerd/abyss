@@ -1,15 +1,16 @@
 <article>
-  <h2><%= @project.name %></h2>
-  <p class="ml-4"><%= @project.description %></p>
+  <h2 class='title'><%= @project.name %></h2>
+  <section class="mx-2 my-1">
+    <% @project.description.split("\n").each do |line| %>
+      <p><%= line %></p>
+    <% end %>
+  </section>
   <section class='project-task-list'>
-    <div>
-      <h4>Tasks</h4>
-    </div>
+    <h4>Tasks</h4>
     <ul>
-      <% @project.tasks.each do |task| %>
-        <li><%= task.name %></li>
-      <% end %>
+      <%= render @project.tasks %>
     </ul>
+    <%= render 'tasks/form' %>
   </section>
 </article>
 
