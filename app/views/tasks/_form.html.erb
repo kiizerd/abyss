@@ -1,0 +1,6 @@
+<%= form_with model: [ @project, @project.tasks.build ] do |form| %>
+  <span>
+    <%= form.text_field :name, class: 'task-list-form-field' %>
+    <%= form.submit class: 'px-2', active: true %>
+  </span>
+<% end %>

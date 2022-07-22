@@ -1,0 +1,21 @@
+<% unless task.complete? || task.archived? %>
+  <li class='project-task-list-item'>
+    <span class='project-task-name'>
+      <%= task.name.truncate(22) %>
+    </span>
+    <% id_hash = { id: task.id, project_id: task.project.id } %>
+    <% task_complete_path = "/projects/#{task.project.id}/tasks/#{task.id}/complete" %>
+    <%= link_to(task_complete_path, data: {
+      turbo_method: :post
+    }) do %>
+      <%= heroicon "check", options: { class: 'btn icon' } %>
+    <% end %>
+    
+    <%= link_to([task.project, task], data: {
+      turbo_method: :delete,
+      turbo_confirm: 'Are you sure?'
+    }) do %>
+      <%= heroicon "trash", options: { class: 'btn icon' } %>
+    <% end %>
+  </li>
+<% end %>
