@@ -77,3 +77,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# RSpec stable
+group :development, :test do
+# Adding to :development group not necessary,
+# but without it, generators and rake tasks
+# must be preceded by RAILS_ENV=test.
+  gem 'rspec-rails', '~> 6.0.0.rc1'
+end
