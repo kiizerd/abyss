@@ -76,6 +76,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "database_cleaner"
 end
 
 # RSpec stable
@@ -84,4 +85,6 @@ group :development, :test do
 # but without it, generators and rake tasks
 # must be preceded by RAILS_ENV=test.
   gem 'rspec-rails', '~> 6.0.0.rc1'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
 end
