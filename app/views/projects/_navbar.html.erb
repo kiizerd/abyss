@@ -1,4 +1,4 @@
-<nav class="flex gap-2 m-2">
+<nav class="m-2">
   <% if on_index_page? %>
     <%= link_to "New Project", new_project_path, class: 'btn' %>
   <% end %>
@@ -12,14 +12,6 @@
   <% end %>
   
   <% if on_show_page? %>
-    <div><%= link_to 'Edit project', edit_project_path(@project), class: 'btn' %></div>
-    <div><%= link_to 'Delete project',
-                    project_path(@project),
-                    class: 'btn',
-                    data: {
-                      turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    } %></div>
     <div><%= link_to 'Show all', projects_path, class: 'btn' %></div>
   <% end %>
 </nav>
