@@ -4,11 +4,9 @@ class Project < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 10 }
 
-  before_validation :ensure_status_has_a_value
-
-  def ensure_status_has_a_value
-    if status.nil?
-      self.status = 'standby'
-    end
+  def progress
+    return 0 if tasks.empty?
+    
+    tasks.select(&:complete?).size * 100 / tasks.size
   end
 end
