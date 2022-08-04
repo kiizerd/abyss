@@ -1,6 +1,4 @@
 class Project < ApplicationRecord
-  include Completable
-
   has_many :tasks, dependent: :destroy
 
   validates :name, presence: true

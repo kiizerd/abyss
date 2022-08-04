@@ -1,6 +1,4 @@
 class Task < ApplicationRecord
-  include Completable
-
   belongs_to :project
 
   validates :name, presence: true
