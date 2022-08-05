@@ -1,6 +1,8 @@
 <article>
-  <h2 class='title'><%= @project.name %></h2>
-  <section class="mx-2 my-1">
+  <h2 class='title' id='project-name'>
+    <%= @project.name %>
+  </h2>
+  <section class="mx-2 my-1" id='project-description'>
     <% @project.description.split("\n").each do |line| %>
       <p><%= line %></p>
     <% end %>
@@ -14,4 +16,6 @@
   </section>
 </article>
 
-<%= render "navbar", project: @project %>
+<%= render "control_btns" %>
+
+<%= render "navbar" %>
