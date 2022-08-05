@@ -1,12 +1,16 @@
 <li class='project-task-list-item'>
-  <span class='project-task-name'>
+  <% classlist = 'project-task-name' %>
+  <% classlist += task.complete? ? ' line-through' : '' %>
+  <span class="<%= classlist %>" id="<%= dom_id(task) %>">
     <%= task.name.truncate(22) %>
   </span>
   <% id_hash = { id: task.id, project_id: task.project.id } %>
   <% task_complete_path = "/projects/#{task.project.id}/tasks/#{task.id}/complete" %>
-  <%= link_to(task_complete_path, data: {
-    turbo_method: :post
-  }) do %>
+  <%= link_to(task_complete_path,
+              id: 'complete-task-btn',
+              data: {
+                turbo_method: :post
+              }) do %>
     <%= heroicon "check", options: { class: 'btn icon' } %>
   <% end %>
   

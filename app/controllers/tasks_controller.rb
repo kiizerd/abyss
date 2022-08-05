@@ -18,7 +18,7 @@ class TasksController < ApplicationController
 
   def complete
     @task = @project.tasks.find(params[:id])
-    @task.update(status: 'complete')
+    @task.update(status: 3)
     redirect_to @project
   end
 
