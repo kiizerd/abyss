@@ -11,7 +11,11 @@
               data: {
                 turbo_method: :post
               }) do %>
-    <%= heroicon "check", options: { class: 'btn icon' } %>
+    <% if task.complete? %>
+      <%= heroicon "refresh", options: { class: 'btn icon' } %>
+    <% else %>
+      <%= heroicon "check", options: { class: 'btn icon' } %>
+    <% end %>
   <% end %>
   
   <%= link_to([task.project, task], data: {

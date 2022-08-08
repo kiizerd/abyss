@@ -16,9 +16,10 @@ class TasksController < ApplicationController
     @task.update(task_params)
   end
 
+  # toggles completion status
   def complete
     @task = @project.tasks.find(params[:id])
-    @task.update(status: 3)
+    @task.update(status: @task.complete? ? 1 : 3)
     redirect_to @project
   end
 
