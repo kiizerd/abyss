@@ -1,66 +1,17 @@
+/* Import css components before tailwind directive */
+@import './components/components.css';
+@import './pages/project_show.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .icon {
-    @apply w-12 h-8;
-  }
-
   .title {
     @apply underline leading-loose text-lg;
-  }
-
-  .form-field {
-    @apply py-2 px-4 text-gray-700 rounded mt-1;
-  }
-
-  .form {
-    @apply bg-slate-700 text-gray-300
-    mt-2 py-2 px-4
-    rounded-md;
-  }
-
-  .form-group {
-    @apply flex flex-col mb-2;
-  }
-  
-  input[type="submit"], .btn {
-    @apply bg-slate-500 text-gray-100
-    rounded cursor-pointer
-    my-2 px-3 py-1;
-  }
-
-  .project-task-list {
-    @apply m-4 px-3 py-1 w-80
-    bg-slate-700 rounded text-sm;
-  }
-  
-  /* Task List Header */
-  .project-task-list > h4 {
-    text-decoration: underline;
-    @apply text-lg;
-  }
-  
-  .project-task-list > ul {
-    @apply max-h-64 overflow-x-scroll;
-  }
-
-  .project-task-list-item {
-    @apply my-1 pl-1 pr-3
-    flex justify-between items-center gap-2
-    bg-slate-800;
-  }
-
-  .project-task-name {
-    @apply max-w-xs flex-grow;
-  }
-
-  .task-list-form-field {
-    @apply form-field mt-2 py-1 px-2 w-40 text-sm;
   }
 }
 
 body {
-  @apply bg-slate-800 text-gray-200;
+  @apply bg-slate-700 text-gray-200;
 }

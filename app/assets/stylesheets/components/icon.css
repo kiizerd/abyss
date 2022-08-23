@@ -1,0 +1,13 @@
+@layer components {
+  .icon {
+    @apply h-6 btn my-1 px-2;
+  }
+
+  .icon-no-btn {
+    @apply h-6 hover:scale-125 transition-all duration-100;
+  }
+
+  .icon-outline {
+    @apply icon;
+  }
+}

@@ -1,0 +1,64 @@
+@layer components {
+  .project-children {
+    @apply m-0 p-0 flex flex-col items-center
+    sm:flex-row sm:items-start;
+  }
+
+  .project-child {
+    @apply mx-2 my-4 pl-3 py-1 w-80
+    bg-slate-600 rounded text-sm;
+  }
+
+  .project-child > h4 {
+    @apply text-lg underline;
+  }
+  
+  .project-child > ul {
+    @apply max-h-56 overflow-x-scroll;
+  }
+
+  /* Offset to correct the space given by */
+  /* `ul` for a scrollbar */
+  .project-child > form {
+    @apply pr-3;
+  }
+
+  .project-child-list-item {
+    @apply my-1 p-1 pr-2
+    flex justify-between items-center gap-2
+    bg-slate-700;
+    max-width: 96%;
+  }
+
+  .project-child-list-item > span {
+    @apply max-w-xs flex-grow;
+  }
+
+  .project-child-list-item > span[data-status="complete"] {
+    @apply line-through;
+  }
+
+  .project-child-form-field {
+    @apply form-field mt-2 py-1 px-2 text-sm;
+  }
+
+  .task-list-item {
+    @apply project-child-list-item;
+  }
+
+  .task-form-field {
+    @apply project-child-form-field w-40;
+  }
+
+  .issue-list-item {
+    @apply project-child-list-item;
+  }
+
+  .issue-form-field {
+    @apply project-child-form-field;
+  }
+
+  .issue-form-field + .issue-form-field {
+    @apply mt-1;
+  }
+}

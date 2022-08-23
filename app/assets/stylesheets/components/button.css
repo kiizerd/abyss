@@ -1,0 +1,7 @@
+@layer components {  
+  input[type="submit"], .btn {
+    @apply bg-slate-500 text-gray-100
+    rounded cursor-pointer
+    my-2 px-3 py-1;
+  }
+}
