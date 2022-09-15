@@ -11,6 +11,6 @@ RSpec.feature "User creates a task" do
 
     # Expect a list item node in the node
     # with class "project-task-list"
-    expect(page).to have_css ".project-task-list li"
+    expect(page).to have_css "ul .task-list-item"
   end
 end
