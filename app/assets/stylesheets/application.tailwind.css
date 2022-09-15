@@ -1,6 +1,6 @@
 /* Import css components before tailwind directive */
 @import './components/components.css';
-@import './pages/project_show.css';
+@import './pages/pages.css';
 
 @tailwind base;
 @tailwind components;

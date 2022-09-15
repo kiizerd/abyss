@@ -1,0 +1,14 @@
+@layer components {
+  .project-index-heading {
+    @apply text-gray-200 text-lg mb-2;
+  }
+
+  .project-index-list {
+    @apply flex flex-col text-gray-300 ml-4 my-2;
+  }
+
+  .project-list-item {
+    @apply text-gray-800 bg-slate-300 rounded p-2 mb-2 mr-auto;
+    min-width: 345px;
+  }
+}
