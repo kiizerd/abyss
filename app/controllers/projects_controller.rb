@@ -1,6 +1,12 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.most_active_first
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json do
+        render json: { projects: @projects }
+      end
+    end
   end
 
   def show
@@ -14,10 +20,21 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
 
-    if @project.save
-      redirect_to @project
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project }
+        format.json do
+          render json: { projects: @projects }, status: :created
+        end
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json do
+          render json: {
+            project: @project.to_json,
+            errors: @project.errors.full_messages
+          }, status: :unprocessable_entity
+        end
+      end
     end
   end
 
