@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :tasks, dependent: :destroy
+  has_many :issues, dependent: :destroy
 
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 10 }

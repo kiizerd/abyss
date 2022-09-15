@@ -1,0 +1,12 @@
+<%# Split this into 2 forms a "Simple" and a "Complex"
+    Toggle between them with a checkbox and some StimulusJS
+    Simple forms will only have a name
+    A :simple boolean should probably be added to the model as well %>
+
+<%= new_issue_form(@project) do |form| %>
+  <div class="flex flex-col">
+    <%= new_issue_name_field(form) %>
+    <%= new_issue_body_field(form) %>
+    <%= form.submit %>
+  </div>
+<% end %>

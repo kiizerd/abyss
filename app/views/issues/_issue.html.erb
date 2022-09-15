@@ -1,0 +1,15 @@
+<div class="flex flex-col overflow-hidden" data-controller="issue">
+  <li class='issue-list-item mb-0'>
+    <span id="<%= dom_id(issue) %>" data-status="<%= issue.status %>">
+      <span class="overflow-x-scroll max-w-xs max-h-4">
+        <%= issue.name %>
+      </span>
+    </span>
+    <%= dropdown_toggle_button(:issue, :toggle_body) %>
+    <%= completion_toggle_button(issue) %>
+    <%= delete_completable_button(issue) %>
+  </li>
+  <span data-issue-target="body" class="hidden mt-0 pt-0 pl-2 issue-list-item">
+    <%= issue.body %>
+  </span>
+</div>
