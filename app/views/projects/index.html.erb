@@ -1,11 +1,9 @@
-<h1 class="heading text-gray-200 text-lg mb-2">Projects</h1>
+<div class="mx-auto flex flex-col">
+<h1 class="heading project-index-heading">Projects</h1>
 
-<ul class='flex flex-col text-gray-300 ml-4 my-2'>
-  <% @projects.each do |project| %>
-    <li>
-      <%= link_to project.name, project %>
-    </li>
-  <% end %>
+<ul class='project-index-list'>
+  <%= render @projects %>
 </ul>
 
 <%= render "navbar" %>
+</div>

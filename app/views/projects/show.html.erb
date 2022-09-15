@@ -1,21 +1,32 @@
-<article>
-  <h2 class='title' id='project-name'>
-    <%= @project.name %>
-  </h2>
+<article class="md:mx-auto">
+  <header class="flex justify-between">
+    <h2 class='title' id='project-name'>
+      <%= @project.name %>
+    </h2>
+    <span class="flex">
+      <%= render "control_btns" %>
+      <%= render "navbar" %>
+    </span>
+  </header>
+
   <section class="mx-2 my-1" id='project-description'>
     <% @project.description.split("\n").each do |line| %>
       <p><%= line %></p>
     <% end %>
   </section>
-  <section class='project-task-list'>
-    <h4>Tasks</h4>
-    <ul>
-      <%= render @project.tasks %>
-    </ul>
-    <%= render 'tasks/form' %>
-  </section>
+  
+  <div class="project-children">
+    <section class='project-child'>
+      <h4>Tasks</h4>
+      <ul><%= render @project.tasks %></ul>
+      <%= render 'tasks/form' %>
+    </section>
+    
+    <section class='project-child'>
+      <h4>Issues</h4>
+      <ul><%= render @project.issues %></ul>
+      <%= render 'issues/form' %>
+    </section>
+  </div>
+
 </article>
-
-<%= render "control_btns" %>
-
-<%= render "navbar" %>

@@ -2,10 +2,12 @@
   <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, class: 'form-field' %>
+  </div>
+  <span class="w-full">
     <% project.errors.full_messages_for(:name).each do |message| %>
       <div class='text-red-500'><%= message %></div>
     <% end %>
-  </div>
+  </span>
 
   <div class="form-group">
     <% description_errors = project.errors.full_messages_for(:description) %>

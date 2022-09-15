@@ -1,0 +1,17 @@
+<div data-controller="project" class="project-list-item">
+  <li class="flex justify-between">
+    <%= link_to project.name, project, class: 'hover:underline flex-grow' %>
+    <%= show_project_button(project) %>
+    <%= edit_project_button(project) %>
+    <%= delete_project_button(project) %>
+    <%= dropdown_toggle_button(:project, :toggle_body) %>
+  </li>
+  <div class="flex-grow hidden p-px mx-4" data-project-target="body">
+    <div>
+      <%= project.tasks.count %> tasks
+    </div>
+    <div>
+      <%= project.issues.count %> issues
+    </div>
+  </div>
+</div>
