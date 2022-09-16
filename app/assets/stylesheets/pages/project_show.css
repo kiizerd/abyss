@@ -31,7 +31,8 @@
   }
 
   .project-child-list-item > span {
-    @apply max-w-xs flex-grow;
+    @apply flex-grow;
+    width: 50%;
   }
 
   .project-child-list-item > span[data-status="complete"] {
