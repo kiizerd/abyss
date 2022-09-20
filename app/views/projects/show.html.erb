@@ -18,13 +18,17 @@
   <div class="project-children">
     <section class='project-child'>
       <h4>Tasks</h4>
-      <ul><%= render @project.tasks %></ul>
+      <% unless @project.tasks.empty? %>
+        <ul><%= render @project.tasks %></ul>
+      <% end %>
       <%= render 'tasks/form' %>
     </section>
     
     <section class='project-child'>
       <h4>Issues</h4>
-      <ul><%= render @project.issues %></ul>
+      <% unless @project.issues.empty? %>
+        <ul><%= render @project.issues %></ul>
+      <% end %>
       <%= render 'issues/form' %>
     </section>
   </div>
